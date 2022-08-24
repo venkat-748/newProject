@@ -1,11 +1,9 @@
 pipeline {
- environment {
-  JAVA_TOOL_OPTIONS = ""
- }
  
  agent {
   docker{
    image "gradle:7.5.1-jdk8"
+   args "-v /tmp/gradle:/var/gradle/.g2 -e GRADLE_CONFIG=/var/gradle/.g2"
   }
   }
 
