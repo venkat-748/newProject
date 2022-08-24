@@ -1,4 +1,8 @@
 pipeline {
+ environment {
+  JAVA_TOOL_OPTIONS = ""
+ }
+ 
  agent {
   docker{
    image "gradle:7.5.1-jdk8"
@@ -8,6 +12,7 @@ pipeline {
     stages {
             stage('Clean') {
             steps {
+             sh 'env | sort'
                 sh 'chmod 777 *'
            sh './gradlew clean'
             }
