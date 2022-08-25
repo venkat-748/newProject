@@ -36,7 +36,6 @@ pipeline {
             }
         }
      stage('Deploy'){
-     agent any 
       steps{
         mkdir 'dockerimg'
         cp 'dockerimg'
