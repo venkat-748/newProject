@@ -41,15 +41,7 @@ pipeline {
         sh label: '',script: ''rm -rf dockerimg
         mkdir 'dockerimg'
         cp 'dockerimg'
-        cp '/home/venkat-zstk271/Downloads/AgentOne/workspace/GradleDocker/lib/build/libs/lib.war .' 
-        touch 'dockerfile'
-        cat '<<EOT>>dockerfile'
-        FROM tomcat
-       ADD  lib.war 
-        CMD ["catalina.sh","run"]
-        EXPOSE 8088
-        EOT
-        sudo docker build -t webimage
+        cp '/home/venkat-zstk271/Downloads/AgentOne/workspace/GradleDocker/lib/build/libs/lib.war .'
         
       }
      }
