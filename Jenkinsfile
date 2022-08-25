@@ -34,14 +34,6 @@ pipeline {
            sh 'gradle  myTask'
             sh 'pwd'
             }
-        }
-     stage('Deploy'){
-      steps{
-        mkdir 'dockerimg'
-        cp 'dockerimg'
-        cp '/home/venkat-zstk271/Downloads/AgentOne/workspace/GradleDocker/lib/build/libs/lib.war .'
-        
-      }
-     }
+          }
     }
 }
