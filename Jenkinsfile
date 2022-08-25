@@ -37,7 +37,7 @@ pipeline {
      stage('Deploy'){
      agent any 
       steps{
-        sh label: '',script: '''rm -rf dockerimg
+        sh label: '',script: ''rm -rf dockerimg
         mkdir dockerimg
         cp dockerimg
         cp /home/venkat-zstk271/.jenkins/workspace/GradleDocker@tmp/FirstGradle/lib/build/libs/lib.war .
