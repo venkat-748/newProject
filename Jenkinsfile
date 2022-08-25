@@ -49,7 +49,7 @@ pipeline {
         CMD ["catalina.sh","run"]
         EXPOSE 8088
         EOT
-        sudo docker build -t webimage : $BUILD_NUMBER .
+        sudo docker build -t webimage
         
       }
      }
