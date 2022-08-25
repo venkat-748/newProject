@@ -32,6 +32,7 @@ pipeline {
           stage('finished') {
             steps {
            sh 'gradle  myTask'
+             pwd
             }
         }
 //      stage('Deploy'){
