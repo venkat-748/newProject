@@ -40,7 +40,7 @@ pipeline {
         sh label: '',script: '''rm -rf dockerimg
         mkdir dockerimg
         cp dockerimg
-        cp /var/lib/jenkins/workspace///home/venkat-zstk271/eclipse-workspace/FirstGradle/lib/build/libs/lib.war .
+        cp /home/venkat-zstk271/.jenkins/workspace/GradleDocker@tmp/FirstGradle/lib/build/libs/lib.war .
         touch dockerfile
         cat <<EOT>>dockerfile
         FROM tomcat
