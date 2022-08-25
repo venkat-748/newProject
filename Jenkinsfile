@@ -45,7 +45,7 @@ pipeline {
         touch 'dockerfile'
         cat '<<EOT>>dockerfile'
         FROM tomcat
-        ADD lib.war /home/venkat-zstk271/Documents/apache-tomcat-9.0.64/webapps/
+        ADD lib.war /home/venkat-zstk271/Documents/apache-tomcat-9.0.64/webapps
         CMD ["catalina.sh","run"]
         EXPOSE 8088
         EOT
