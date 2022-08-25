@@ -34,5 +34,23 @@ pipeline {
            sh 'gradle  myTask'
             }
         }
+     stage('Deploy'){
+     agent any 
+      steps{
+        sh label: '',script: '''rm -rf dockerimg
+        mkdir dockerimg
+        cp dockerimg
+        cp /var/lib/jenkins/workspace///home/venkat-zstk271/eclipse-workspace/FirstGradle/lib/build/libs/lib.war .
+        touch dockerfile
+        cat <<EOT>>dockerfile
+        FROM tomcat
+        ADD gameoflife.war /home/venkat-zstk271/Documents/apache-tomcat-9.0.64/webapps/
+        CMD ["catalina.sh","run"]
+        EXPOSE 8088
+        EOT
+        sudo docker build -t webimage:$BUILD_NUMBER .
+        
+      }
+     }
     }
 }
