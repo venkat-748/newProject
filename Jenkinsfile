@@ -1,8 +1,8 @@
 pipeline {
  
  agent {
-  dockerfile{
-   args "-v /tmp/gradle:/var/gradle/.g2 -e GRADLE_CONFIG=/var/gradle/.g2"
+  docker{
+      image "gradle:7.5.1-jdk8"
   }
   }
 
