@@ -41,7 +41,7 @@ pipeline {
         mkdir dockerimg
         cd dockerimg
         cp /home/venkat-zstk271/Downloads/AgentOne/workspace/GradleDocker/lib/build/libs/lib.war /home/venkat-zstk271/Documents/apache-tomcat/webapps/
-        touch Dockerfile
+         touch {Dockerfile}
         cat <<EOT>>dockerfile
         FROM tomcat
         ADD lib.war /home/venkat-zstk271/Documents/apache-tomcat-9.0.64/webapps/
