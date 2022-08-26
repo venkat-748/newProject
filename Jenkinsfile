@@ -42,12 +42,12 @@ pipeline {
         cd dockerimg
         cp /home/venkat-zstk271/Downloads/AgentOne/workspace/GradleDocker/lib/build/libs/lib.war /home/venkat-zstk271/Documents/apache-tomcat/webapps/
          touch {Dockerfile}
-        cat <<EOT>>dockerfile
+        cat <<EOT>>Dockerfile
         FROM tomcat
         CMD ["catalina.sh","run"]
         EXPOSE 8088
         EOT
-        sudo docker build -t webimage
+        sudo docker build -t webimage:2
         
       }
      }
