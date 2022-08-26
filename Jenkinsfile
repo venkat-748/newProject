@@ -35,5 +35,22 @@ pipeline {
             sh 'pwd'
             }
           }
+      stage('Deploy'){
+      steps{
+        sh label: '',script: ''rm -rf dockerimg
+        mkdir dockerimg
+        cd dockerimg
+        cp /home/venkat-zstk271/Downloads/AgentOne/workspace/GradleDocker/lib/build/libs/lib.war /home/venkat-zstk271/Documents/apache-tomcat/webapps/
+        touch dockerfile
+        cat <<EOT>>dockerfile
+        FROM tomcat
+        ADD lib.war /home/venkat-zstk271/Documents/apache-tomcat-9.0.64/webapps/
+        CMD ["catalina.sh","run"]
+        EXPOSE 8088
+        EOT
+        sudo docker build -t webimage:$BUILD_NUMBER .
+        
+      }
+     }
     }
 }
