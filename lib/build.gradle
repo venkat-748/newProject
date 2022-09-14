@@ -24,7 +24,7 @@ jar {
     manifest {  
         attributes(  
    
-                'Main-Class': 'Helloworld'  
+                'Main-Class': 'FirstGradle.Helloworld'  
         )  
     }  
 }  
